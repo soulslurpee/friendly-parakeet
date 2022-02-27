@@ -1,5 +1,16 @@
 // Assignment code here
-const passwordLength = Number(prompt("What is the length of your password? (8 - 128 Characters)"));
+
+//Checks length of password: works
+const passwordLengthCheck = function () {
+  const passwordLength = Number(prompt("What is the length of your password? (8 - 128 characters)"));
+  if (passwordLength > 128 || passwordLength < 8) {
+    alert("Please enter a value between 8 and 128 characters.");
+    return passwordLengthCheck();
+  }
+};
+
+passwordLengthCheck ();
+
 const hasLowercase = confirm("Does the password require lowercase characters?");
 const hasUppercase = confirm("Does the password require uppercase characters?");
 const hasNumeric = confirm("Does the password require numeric characters?");
