@@ -8,15 +8,30 @@ const passwordLengthCheck = function () {
     return passwordLengthCheck();
   }
 };
+const validSelection = function () {
+  const hasLowercase = confirm("Does the password require lowercase characters?");
+  const hasUppercase = confirm("Does the password require uppercase characters?");
+  const hasNumeric = confirm("Does the password require numeric characters?");
+  const hasSpecial = confirm("Does the password require special characters?");
+
+  if (!hasLowercase && !hasUppercase && !hasNumeric && !hasSpecial) {
+    alert("Please select at least one option.")
+    return validSelection();
+  };
+};
 
 passwordLengthCheck ();
+validSelection ();
 
-const hasLowercase = confirm("Does the password require lowercase characters?");
-const hasUppercase = confirm("Does the password require uppercase characters?");
-const hasNumeric = confirm("Does the password require numeric characters?");
-const hasSpecial = confirm("Does the password require special characters?");
 
-console.log(passwordLength, hasLowercase, hasUppercase, hasNumeric, hasSpecial);
+
+
+
+
+
+
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
