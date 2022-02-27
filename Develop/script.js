@@ -4,7 +4,7 @@ const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numeric = "0123456789"
 const special = "!@#$%^&*()"
 
-document.getElementById("generate").addEventListener("click", generatePassword);
+//document.getElementById("generate").addEventListener("click", generatePassword);
 
 function generatePassword () {
   //Request pw length and validate
@@ -23,21 +23,22 @@ function generatePassword () {
     return generatePassword();
   };
 
+  console.log(passwordLength, hasLowercase, hasUppercase, hasNumeric, hasSpecial);
+
   let chars = '';
-  switch (chars) {
-    case hasLowercase:
+    if (hasLowercase) {
       chars += lowercase;
-    case hasUppercase:
+    }
+    if (hasUppercase) {
       chars += uppercase;
-    case hasNumeric:
+    }
+    if (hasNumeric) {
       chars += numeric;
-    case hasSpecial:
+    }
+    if (hasSpecial) {
       chars += special;
-  }
-
-  console.log(chars);
-
-};
+    }
+}
 
 
 
@@ -48,11 +49,11 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
   
 
-  passwordText.value = password;
+passwordText.value = password;
 
 }
 
