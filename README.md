@@ -27,4 +27,4 @@ Week 3 Challenge
 ![Password Generator](./assets/images/screenshot.JPG)
 
 ## Deployed App
-Viewable on [GitHub Pages](https://soulslurpee.github.io/friendly-parakeet/).
+Viewable on [GitHub Pages](https://soulslurpee.github.io/supersecurepw/).
