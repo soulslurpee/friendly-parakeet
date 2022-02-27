@@ -38,6 +38,16 @@ function generatePassword () {
     if (hasSpecial) {
       chars += special;
     }
+  
+  let newPW = ''
+
+  for (var i = 0; i <= passwordLength; i++) {
+    var randomNumber = Math.floor(Math.random() * chars.length);
+    newPW += chars.substring(randomNumber, randomNumber +1);
+  }
+
+  return newPW;
+
 }
 
 
