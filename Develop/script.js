@@ -8,6 +8,8 @@ const passwordLengthCheck = function () {
     return passwordLengthCheck();
   }
 };
+
+//Checks character criteria: works
 const validSelection = function () {
   const hasLowercase = confirm("Does the password require lowercase characters?");
   const hasUppercase = confirm("Does the password require uppercase characters?");
@@ -19,9 +21,9 @@ const validSelection = function () {
     return validSelection();
   };
 };
-
 passwordLengthCheck ();
-validSelection ();
+validSelection();
+
 
 
 
