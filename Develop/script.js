@@ -1,35 +1,43 @@
 // Assignment code here
+const lowercase = "abcdefghijklmnopqrstuvwxyz";
+const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numeric = "0123456789"
+const special = "!@#$%^&*()"
 
-//Checks length of password: works
-const passwordLengthCheck = function () {
+document.getElementById("generate").addEventListener("click", generatePassword);
+
+function generatePassword () {
+  //Request pw length and validate
+  
   const passwordLength = Number(prompt("What is the length of your password? (8 - 128 characters)"));
-  if (passwordLength > 128 || passwordLength < 8) {
-    alert("Please enter a value between 8 and 128 characters.");
-    return passwordLengthCheck();
-  }
-};
-
-//Checks character criteria: works
-const validSelection = function () {
   const hasLowercase = confirm("Does the password require lowercase characters?");
   const hasUppercase = confirm("Does the password require uppercase characters?");
   const hasNumeric = confirm("Does the password require numeric characters?");
   const hasSpecial = confirm("Does the password require special characters?");
 
-  if (!hasLowercase && !hasUppercase && !hasNumeric && !hasSpecial) {
-    alert("Please select at least one option.")
-    return validSelection();
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Invalid Entry: password length must be between 8 and 128 characters");
+    return generatePassword();
+  } else  if (!hasLowercase && !hasUppercase && !hasNumeric && !hasSpecial) {
+    alert("Invalid Entry: please choose at least one character requirement.")
+    return generatePassword();
   };
+
+  let chars = '';
+  switch (chars) {
+    case hasLowercase:
+      chars += lowercase;
+    case hasUppercase:
+      chars += uppercase;
+    case hasNumeric:
+      chars += numeric;
+    case hasSpecial:
+      chars += special;
+  }
+
+  console.log(chars);
+
 };
-passwordLengthCheck ();
-validSelection();
-
-
-
-
-
-
-
 
 
 
